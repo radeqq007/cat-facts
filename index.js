@@ -1,4 +1,7 @@
-document.getElementById('new-fact').addEventListener('click', () => {
+const fact = document.getElementById('fact');
+const newFact = document.getElementById('new-fact');
+
+newFact.addEventListener('click', () => {
   fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=2')
     .then((res) => {
       if (!res.ok) {
@@ -8,9 +11,9 @@ document.getElementById('new-fact').addEventListener('click', () => {
     })
     .then((data) => {
       console.log(data[0].text);
-      document.getElementById('fact').textContent = data[0].text;
+      fact.textContent = data[0].text;
     })
     .catch((err) => {
-      console.log(err);
+      fact.textContent = 'An error occurred';
     });
 });
