@@ -2,7 +2,7 @@ const fact = document.getElementById('fact');
 const newFact = document.getElementById('new-fact');
 
 newFact.addEventListener('click', () => {
-  fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=2')
+  fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1')
     .then((res) => {
       if (!res.ok) {
         throw new Error('Failed to retrieve data from website.');
@@ -10,8 +10,7 @@ newFact.addEventListener('click', () => {
       return res.json();
     })
     .then((data) => {
-      console.log(data[0].text);
-      fact.textContent = data[0].text;
+      fact.textContent = data.text;
     })
     .catch((err) => {
       fact.textContent = 'An error occurred';

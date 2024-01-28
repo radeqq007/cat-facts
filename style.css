@@ -38,9 +38,10 @@ body {
 
 #new-fact {
   border: none;
-  background-color: orange;
-  height: 2rem;
-  width: 5rem;
+  background-color: #ffc738;
+  box-shadow: 0 5px 0 orange;
+  height: 3rem;
+  width: 8rem;
   border-radius: 0.5rem;
   font-weight: bold;
   cursor: pointer;
